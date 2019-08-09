@@ -7,20 +7,39 @@ import './App.css';
 class App extends Component {
   state = {
     results: [],
-    noResults: null
+    loading: false,
+    searched: false,
+    error: null
   };
 
   setResults = nameArray => {
-    this.setState({ results: nameArray });
+    this.setState({
+      results: nameArray,
+      loading: false,
+      searched: true
+    });
+  };
+
+  setLoading = () => {
+    this.setState({ loading: true });
+  };
+
+  setError = error => {
+    this.setState({ error });
   };
 
   render() {
+    const { results, loading, searched } = this.state;
     return (
       <>
         <Header />
         <main className="App">
-          <Form setResults={this.setResults} />
-          <Results results={this.state.results} />
+          <Form
+            setResults={this.setResults}
+            setLoading={this.setLoading}
+            setError={this.setError}
+          />
+          <Results results={results} loading={loading} searched={searched} />
         </main>
       </>
     );

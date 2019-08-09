@@ -8,6 +8,8 @@ class Form extends Component {
     const RESOURCE = e.target.resource.value;
     const BASE_URL = `https://swapi.co/api/${RESOURCE}/?search=`;
     const FINAL_URL = BASE_URL + QUERY;
+    this.props.setLoading();
+
     fetch(FINAL_URL)
       .then(res => {
         if (!res.ok) {
@@ -15,9 +17,8 @@ class Form extends Component {
         }
         return res.json();
       })
-      .then(obj => obj.results)
-      .then(array =>
-        array.map(item => {
+      .then(data =>
+        data.results.map(item => {
           if (RESOURCE === 'films') {
             return item.title;
           } else {
@@ -25,7 +26,8 @@ class Form extends Component {
           }
         })
       )
-      .then(mapped => this.props.setResults(mapped));
+      .then(mapped => this.props.setResults(mapped))
+      .catch(error => this.props.setError(error));
   };
 
   render() {
