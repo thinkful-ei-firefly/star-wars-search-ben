@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './Form.css';
 
 class Form extends Component {
+  state = {
+    error: null
+  };
+
   handleSubmit = e => {
     e.preventDefault();
     const QUERY = e.target.search.value;
@@ -24,10 +28,15 @@ class Form extends Component {
         })
       )
       .then(mapped => this.props.setResults(mapped))
-      .catch(error => console.log(error));
+      .catch(error => {
+        this.setState({ error });
+      });
   };
 
   render() {
+    if (this.state.error) {
+      throw new Error('API Error!');
+    }
     return (
       <form className="search-form" onSubmit={this.handleSubmit}>
         <label htmlFor="search">

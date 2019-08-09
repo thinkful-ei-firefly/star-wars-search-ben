@@ -17,6 +17,12 @@ main {
   padding: 5%;
 }
 
+.error-page {
+  margin: 0;
+  padding: 2%;
+  color: red;
+}
+
 .search-form,
 .results {
   padding: 2%;

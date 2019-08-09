@@ -9,10 +9,10 @@ class ErrorPage extends Component {
   render() {
     if (this.state.error) {
       return (
-        <main className="error-page">
-          <h1>Something seems to have gone wrong</h1>
+        <div className="error-page">
+          <h2>Something went wrong!</h2>
           <p>Try refreshing the page</p>
-        </main>
+        </div>
       );
     }
     return this.props.children;
