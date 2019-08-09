@@ -2,13 +2,10 @@
   text-align: left;
 }
 
-label,
 input {
   display: block;
-}
-
-label,
-input {
+  width: 340px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -16,10 +13,6 @@ input,
 select,
 button {
   font-size: 16px;
-}
-
-input {
-  width: 340px;
 }
 
 select {

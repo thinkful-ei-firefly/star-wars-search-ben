@@ -39,18 +39,16 @@ class Form extends Component {
     }
     return (
       <form className="search-form" onSubmit={this.handleSubmit}>
-        <label htmlFor="search">
-          Enter a
-          <select id="resource" name="resource">
-            <option value="people">Character</option>
-            <option value="planets">Planet</option>
-            <option value="starships">Spaceship</option>
-            <option value="vehicles">Vehicle</option>
-            <option value="films">Film</option>
-            <option value="species">Species</option>
-          </select>
-          to search for:
-        </label>
+        <label htmlFor="resource">Enter a</label>
+        <select id="resource" name="resource">
+          <option value="people">Character</option>
+          <option value="planets">Planet</option>
+          <option value="starships">Spaceship</option>
+          <option value="vehicles">Vehicle</option>
+          <option value="films">Film</option>
+          <option value="species">Species</option>
+        </select>
+        <label>to search for:</label>
         <input type="text" id="search" name="search" placeholder="Skywalker" />
         <button type="submit">Use the Search, Luke!</button>
       </form>
