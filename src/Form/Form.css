@@ -7,12 +7,14 @@ input {
   display: block;
 }
 
-label {
+label,
+input {
   margin-bottom: 10px;
 }
 
 input,
-select {
+select,
+button {
   font-size: 16px;
 }
 
@@ -23,4 +25,8 @@ input {
 select {
   margin-left: 5px;
   margin-right: 5px;
+}
+
+button {
+  padding: 5px;
 }

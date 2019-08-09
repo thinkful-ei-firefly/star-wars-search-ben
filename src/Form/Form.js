@@ -52,6 +52,7 @@ class Form extends Component {
           to search for:
         </label>
         <input type="text" id="search" name="search" placeholder="Skywalker" />
+        <button type="submit">Use the Search, Luke!</button>
       </form>
     );
   }
