@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "alias": "benjaminjrosen-star-wars-search",
+  "name": "bookmarks-app",
+  "routes": [
+      {
+        "src": "^/static/(.*)",
+        "dest": "/static/$1"
+      },
+      {
+        "src": ".*",
+        "dest": "/index.html"
+      }
+  ]
+}
