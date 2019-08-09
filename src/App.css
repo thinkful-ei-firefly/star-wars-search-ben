@@ -11,24 +11,12 @@ body {
   font-size: 18px;
 }
 
-.header {
-  color: white;
-  background-color: #667292;
-  padding: 2%;
-}
-
-.subheader {
-  font-style: italic;
-}
-
 main {
   margin: 0 auto;
   width: 40%;
-  padding: 2%;
 }
 
 .search-form,
 .results {
-  margin: 2%;
   padding: 2%;
 }

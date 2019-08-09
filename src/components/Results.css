@@ -1,11 +1,5 @@
 ul {
+  margin-top: 10%;
   list-style: none;
   text-align: left;
-}
-
-li {
-  margin: 2%;
-  padding: 2%;
-  background-color: #bccad6;
-  color: black;
 }

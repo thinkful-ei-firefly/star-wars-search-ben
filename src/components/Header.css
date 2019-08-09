@@ -1,0 +1,13 @@
+.header {
+  color: white;
+  background-color: #667292;
+  padding: 2%;
+}
+
+.subheader {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 36px;
+}
