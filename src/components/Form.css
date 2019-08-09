@@ -1,15 +1,26 @@
 .search-form {
-  margin-top: 10%;
+  text-align: left;
 }
 
 label,
 input {
   display: block;
-  margin: 2%;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input,
+select {
+  font-size: 16px;
 }
 
 input {
-  margin: 0 auto;
-  width: 100%;
-  font-size: 16px;
+  width: 340px;
+}
+
+select {
+  margin-left: 5px;
+  margin-right: 5px;
 }

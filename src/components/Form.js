@@ -41,7 +41,7 @@ class Form extends Component {
             <option value="films">Film</option>
             <option value="species">Species</option>
           </select>
-          :
+          to search for:
         </label>
         <input type="text" id="search" name="search" placeholder="Skywalker" />
       </form>
