@@ -5,7 +5,8 @@ class Form extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const QUERY = e.target.search.value;
-    const BASE_URL = 'https://swapi.co/api/people/?search=';
+    const RESOURCE = e.target.resource.value;
+    const BASE_URL = `https://swapi.co/api/${RESOURCE}/?search=`;
     const FINAL_URL = BASE_URL + QUERY;
     fetch(FINAL_URL)
       .then(res => {
@@ -15,14 +16,33 @@ class Form extends Component {
         return res.json();
       })
       .then(obj => obj.results)
-      .then(array => array.map(person => person.name))
+      .then(array =>
+        array.map(item => {
+          if (RESOURCE === 'films') {
+            return item.title;
+          } else {
+            return item.name;
+          }
+        })
+      )
       .then(mapped => this.props.setResults(mapped));
   };
 
   render() {
     return (
       <form className="search-form" onSubmit={this.handleSubmit}>
-        <label htmlFor="search">Enter a name:</label>
+        <label htmlFor="search">
+          Enter a
+          <select id="resource" name="resource">
+            <option value="people">Character</option>
+            <option value="planets">Planet</option>
+            <option value="starships">Spaceship</option>
+            <option value="vehicles">Vehicle</option>
+            <option value="films">Film</option>
+            <option value="species">Species</option>
+          </select>
+          :
+        </label>
         <input type="text" id="search" name="search" placeholder="Skywalker" />
       </form>
     );
