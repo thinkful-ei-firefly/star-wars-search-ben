@@ -11,12 +11,9 @@ class Form extends Component {
     this.props.setLoading();
 
     fetch(FINAL_URL)
-      .then(res => {
-        if (!res.ok) {
-          throw new Error('Something went wrong, please try again later');
-        }
-        return res.json();
-      })
+      .then(res =>
+        res.ok ? res.json() : Promise.reject('Something went wrong')
+      )
       .then(data =>
         data.results.map(item => {
           if (RESOURCE === 'films') {
@@ -27,7 +24,7 @@ class Form extends Component {
         })
       )
       .then(mapped => this.props.setResults(mapped))
-      .catch(error => this.props.setError(error));
+      .catch(error => console.log(error));
   };
 
   render() {
