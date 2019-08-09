@@ -1,0 +1,10 @@
+label,
+input {
+  display: block;
+  margin: 2%;
+}
+
+input {
+  margin: 0 auto;
+  width: 25%;
+}
