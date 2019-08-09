@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import Form from './components/Form';
-import Results from './components/Results';
-
+import Header from '../Header/Header';
+import Form from '../Form/Form';
+import Results from '../Results/Results';
 import './App.css';
 
 class App extends Component {
   state = {
-    results: []
+    results: [],
+    noResults: null
   };
 
   setResults = nameArray => {
